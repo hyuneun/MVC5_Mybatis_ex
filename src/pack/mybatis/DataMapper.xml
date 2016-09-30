@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="pro">
+
+ <select id="sawonUp" resultType="kr.co.model.SawonDto">
+  select * from sawon order by sawon_no desc
+ </select>
+ 
+ <select id="sawonDown" resultType="kr.co.model.SawonDto">
+  select * from sawon order by sawon_no
+ </select>
+ 
+ <select id="gogekUp" resultType="kr.co.model.GogekDTo">
+  select gogek_no,gogek_name,gogek_tel,case when gogek_jumin like '%-1%' then '남' when gogek_jumin like '%-2%' then '여'end as gogek_jumin,gogek_damsano from gogek order by gogek_no desc
+ </select>
+ 
+ <select id="gogekDown" resultType="kr.co.model.GogekDTo">
+  select gogek_no,gogek_name,gogek_tel,case when gogek_jumin like '%-1%' then '남' when gogek_jumin like '%-2%' then '여'end as gogek_jumin,gogek_damsano from gogek order by gogek_no
+ </select>
+ 
+</mapper>

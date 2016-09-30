@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$(".ok").click(function(){
+		if($(".sel").val() == "jik"){
+			if($(".radio").is(':checked')){
+	
+				location.href = "sang.do?command=sawon";
+				
+			}
+			if($(".radio2").is(':checked')){
+				
+			
+				location.href = "sang.do?command=sawond";	
+				
+			}
+				
+			
+		}else{
+			if($(".radio").is(':checked')){
+				location.href = "sang.do?command=gogek";
+				
+			}
+			if($(".radio2").is(':checked')){
+				location.href = "sang.do?command=gogekd";
+			}
+			
+		}
+		
+		
+	});
+});
+</script>
+</head>
+<body>
+<!-- <a href="sang.do?command=sang">상품 자료</a>
+<a href="sawon.do?command=jikwon">직원 자료</a> -->
+<select name="select" class="sel">
+	<option value="jik">직원</option>
+	<option value="gog">고객</option>
+</select>
+<input type="radio" name="order" value="up" class="radio">오름
+<input type="radio" name="order" value="down" class="radio2">내림
+<input type="button" value="확인" class="ok">
+
+</body>
+</html>
